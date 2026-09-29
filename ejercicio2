@@ -1,0 +1,18 @@
+class MiTarea implements Runnable {
+
+    @Override
+    public void run() {
+        System.out.println("El hilo secundario usando Runnable está en ejecución.");
+    }
+}
+
+public class Principal {
+    public static void main(String[] args) {
+
+        MiTarea tarea = new MiTarea();
+
+        Thread hilo = new Thread(tarea);
+
+        hilo.start();
+    }
+}
